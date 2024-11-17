@@ -1,13 +1,13 @@
 package helper.model.types;
 
-import java.util.Objects;
+import lombok.NonNull;
 
 public final class Record extends TypeDeclaration {
-    private final String components;
+    private final @NonNull String components;
 
     public Record(String name, String thePackage, AccessModifier accessModifier, String components) {
         super(name, thePackage, accessModifier);
-        this.components = Objects.requireNonNull(components, "Параметр components не должен быть null!");
+        this.components = components;
     }
 
     @Override

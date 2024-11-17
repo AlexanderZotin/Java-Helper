@@ -1,13 +1,13 @@
 package helper.model.types;
 
-import java.util.Objects;
+import lombok.NonNull;
 
 public final class Enum extends TypeDeclaration {
-    private final String constants;
+    private final @NonNull String constants;
 
     public Enum(String name, String thePackage, AccessModifier accessModifier, String constants) {
         super(name, thePackage, accessModifier);
-        this.constants = Objects.requireNonNull(constants, "Параметр constants не должен быть null!");
+        this.constants = constants;
     }
 
     @Override

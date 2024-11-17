@@ -1,15 +1,14 @@
 package helper.model.types;
 
-import java.util.Objects;
+import lombok.NonNull;
 
 public abstract sealed class SealedAbleType extends TypeDeclaration permits Class, Interface {
     protected final boolean isSealed;
-    protected final String permittedSubclasses;
+    protected final @NonNull String permittedSubclasses;
 
     public SealedAbleType(String name, String thePackage, AccessModifier accessModifier, String permittedSubclasses) {
         super(name, thePackage, accessModifier);
-        this.permittedSubclasses = Objects.requireNonNull(permittedSubclasses,
-                "Параметр permittedSubclasses не должен быть null!");
+        this.permittedSubclasses = permittedSubclasses;
         isSealed = !this.permittedSubclasses.isEmpty();
     }
 }

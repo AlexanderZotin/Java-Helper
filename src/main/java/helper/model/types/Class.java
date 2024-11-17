@@ -1,11 +1,11 @@
 package helper.model.types;
 
-import java.util.Objects;
+import lombok.NonNull;
 
 public final class Class extends SealedAbleType {
     private final boolean isFinal;
     private final boolean isAbstract;
-    private final String superClass;
+    private final @NonNull String superClass;
     private final boolean createMain;
     private final boolean createConstructor;
 
@@ -15,7 +15,7 @@ public final class Class extends SealedAbleType {
         super(name, thePackage, accessModifier, permittedSubclasses);
         this.isFinal = isFinal;
         this.isAbstract = isAbstract;
-        this.superClass = Objects.requireNonNull(superClass);
+        this.superClass = superClass;
         this.createMain = createMain;
         this.createConstructor = createConstructor;
     }

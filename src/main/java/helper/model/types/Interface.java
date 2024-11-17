@@ -1,13 +1,13 @@
 package helper.model.types;
 
-import java.util.Objects;
+import lombok.NonNull;
 
 public final class Interface extends SealedAbleType {
-    private final String parents;
+    private final @NonNull String parents;
 
     public Interface(String name, String thePackage, AccessModifier accessModifier, String parents, String permittedSubclasses) {
         super(name, thePackage, accessModifier, permittedSubclasses);
-        this.parents = Objects.requireNonNull(parents, "Параметр parents не должен быть null!");
+        this.parents = parents;
     }
 
     @Override

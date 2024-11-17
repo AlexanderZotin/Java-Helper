@@ -26,7 +26,8 @@ public class InterfaceDialog extends QuestionnaireDialog {
         createButton.setPreferredSize(new Dimension(170, 30));
         setSize(230, 420);
         permittedSubtypesTextField.setEnabled(false);
-        sealedCheckBox.addItemListener(_ -> permittedSubtypesTextField.setEnabled(sealedCheckBox.isSelected()));
+        sealedCheckBox.addItemListener(_ -> 
+                permittedSubtypesTextField.setEnabled(sealedCheckBox.isSelected()));
     }
 
     @Override
